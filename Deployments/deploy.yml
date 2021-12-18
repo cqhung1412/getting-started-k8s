@@ -1,4 +1,4 @@
-# Simple deployment used to deploy and manage the app in nigelpoulton/getting-started-k8s:1.0
+# Simple deployment used to deploy and manage the app in qhung1412/gsk8s:v1
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -6,7 +6,7 @@ metadata:
   labels:
     app: web
 spec:
-  replicas: 5
+  replicas: 9
   selector:
     matchLabels:
       app: web
@@ -18,7 +18,7 @@ spec:
       terminationGracePeriodSeconds: 1
       containers:
       - name: hello-pod
-        image: nigelpoulton/getting-started-k8s:1.0
+        image: qhung1412/gsk8s:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
